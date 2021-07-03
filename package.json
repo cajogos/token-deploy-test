@@ -12,8 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "openzeppelin-solidity": "^4.2.0"
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.2.0"
   }
 }
