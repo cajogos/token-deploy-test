@@ -20,11 +20,11 @@ module.exports = async function(deployer, network, accounts)
 /*
 To migrate:
 
-> truffle migrate
+> truffle migrate --network development|ropsten
 
 After deployment:
 
-> truffle console
+> truffle console --network development|ropsten
 
 1. Get the smart contract:
 > myToken = await MyToken.deployed()
