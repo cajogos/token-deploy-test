@@ -10,15 +10,14 @@ contract ERC20 {
     string private _name;
     string private _symbol;
 
-    constructor(
-        string memory name_,
-        string memory symbol_,
-        uint256 initialSupply_
-    ) {
+    uint256 private _initialSupply = 1000000000000000000000000;
+    uint8 private _decimals = 18;
+
+    constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
 
-        _mint(msg.sender, initialSupply_);
+        _mint(msg.sender, _initialSupply);
     }
 
     // Returns the name of the token
@@ -33,7 +32,7 @@ contract ERC20 {
 
     // Returns the number of decimals expected
     function decimals() public view virtual returns (uint8) {
-        return 18;
+        return _decimals;
     }
 
     // Returns the total supply of the token

@@ -1,15 +1,20 @@
-const MyToken = artifacts.require('MyToken');
-const FarmToken = artifacts.require('FarmToken');
+// const MyToken = artifacts.require('MyToken');
+// const FarmToken = artifacts.require('FarmToken');
+
+const ERC20 = artifacts.require('ERC20');
 
 module.exports = async function(deployer, network, accounts)
 {
-    // Deploy MyToken
-    await deployer.deploy(MyToken);
-    const myToken = await MyToken.deployed();
+    await deployer.deploy(ERC20, 'Carlos Test Token 2', 'CTT2');
+    const token = await ERC20.deployed();
 
-    // Deploy FarmToken
-    await deployer.deploy(FarmToken, myToken.address);
-    const farmToken = await FarmToken.deployed();
+    // // Deploy MyToken
+    // await deployer.deploy(MyToken);
+    // const myToken = await MyToken.deployed();
+
+    // // Deploy FarmToken
+    // await deployer.deploy(FarmToken, myToken.address);
+    // const farmToken = await FarmToken.deployed();
 }
 
 /*
